@@ -3,7 +3,6 @@ import numpy as np
 import time
 from joblib import Parallel, delayed
 
-# Config
 NUM_CPUS = 24
 
 def load_motifs(motif_file):
