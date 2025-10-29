@@ -1,7 +1,3 @@
-# Both the codes commented one and thereafter are correct, the second one is made to run faster.
-
-# Full RIS with KPT, Theta, and Optimized Seed Selection (Parallelized + Numba)
-
 import os
 import math
 import time
@@ -259,32 +255,3 @@ def run_ris():
             model_df.to_csv(f"RIS_Results_{model}.csv", index=False)
 
     return results
-
-# if __name__ == "__main__":
-#     import matplotlib.pyplot as plt
-#     start_time_all = time.time()
-#     final_results = run_ris()
-#     pd.DataFrame(final_results).to_excel("RIS_Results.xlsx", index=False)
-#     print("✅ All results saved to RIS_Results.xlsx")
-#     print(f"⏱️ Total Execution Time: {round(time.time() - start_time_all, 2)} seconds")
-
-#     # Plotting KPT vs Budget and Theta vs Budget per model
-#     df = pd.DataFrame(final_results)
-#     for model in df['Model'].unique():
-#         subset = df[df['Model'] == model]
-
-#         plt.figure()
-#         plt.plot(subset['Budget'], subset['KPT'], marker='o')
-#         plt.title(f"KPT vs Budget ({model})")
-#         plt.xlabel("Budget")
-#         plt.ylabel("KPT")
-#         plt.grid(True)
-#         plt.savefig(f"KPT_vs_Budget_{model}.png")
-
-#         plt.figure()
-#         plt.plot(subset['Budget'], subset['Theta'], marker='s')
-#         plt.title(f"Theta vs Budget ({model})")
-#         plt.xlabel("Budget")
-#         plt.ylabel("Theta")
-#         plt.grid(True)
-#         plt.savefig(f"Theta_vs_Budget_{model}.png")
